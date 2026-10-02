@@ -1037,19 +1037,19 @@
       posterPlay.addEventListener('click', async function () {
         stopMusic();
         const defaultCaption = 'Бейнені ойнату';
-+        posterCaption.textContent = 'Бейне жүктелуде...';
-+        posterPlay.disabled = true;
-+
-+        try {
-+          await ensureInvitationVideoLoaded();
-+          videoPoster.classList.add('is-hidden');
-+          await invitationVideo.play();
-+          posterCaption.textContent = defaultCaption;
-+        } catch (error) {
-+          posterCaption.textContent = 'Бейне жүктелмеді. Интернет байланысын тексеріңіз.';
-+          posterPlay.disabled = false;
-+        }
-+      });
+        posterCaption.textContent = 'Бейне жүктелуде...';
+        posterPlay.disabled = true;
+
+        try {
+          await ensureInvitationVideoLoaded();
+          videoPoster.classList.add('is-hidden');
+          await invitationVideo.play();
+          posterCaption.textContent = defaultCaption;
+        } catch (error) {
+          posterCaption.textContent = 'Бейне жүктелмеді. Интернет байланысын тексеріңіз.';
+          posterPlay.disabled = false;
+        }
+      });
 
       invitationVideo.addEventListener('play', function () {
         stopMusic();
