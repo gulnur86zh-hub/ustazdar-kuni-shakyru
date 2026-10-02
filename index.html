@@ -1036,7 +1036,7 @@
 
       posterPlay.addEventListener('click', async function () {
         stopMusic();
-        const defaultCaption = 'Бейнені ойнату';
+        const defaultCaption = posterCaption.textContent;
         posterCaption.textContent = 'Бейне жүктелуде...';
         posterPlay.disabled = true;
 
@@ -1045,6 +1045,7 @@
           videoPoster.classList.add('is-hidden');
           await invitationVideo.play();
           posterCaption.textContent = defaultCaption;
+          posterPlay.disabled = false;
         } catch (error) {
           posterCaption.textContent = 'Бейне жүктелмеді. Интернет байланысын тексеріңіз.';
           posterPlay.disabled = false;
